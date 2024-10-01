@@ -6,7 +6,6 @@ ENV LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
 ENV PUID=1000 PGID=1000
 
 ENV VERSION=0.9.2
-ENV UPNP_DISCOVERY_PORT=49152
 
 # Install packages
 RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources && \
@@ -29,4 +28,4 @@ EXPOSE ${UPNP_DISCOVERY_PORT}
 USER spotconn
 WORKDIR /config
 
-CMD ["spotupnp-linux-x86_64", "-b", "${UPNP_DISCOVERY_PORT}", "-N", "%s-spotify", "-Z"]
+CMD ["spotupnp-linux-x86_64", "-Z"]
