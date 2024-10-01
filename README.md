@@ -19,7 +19,7 @@ services:
     container_name: spotify-connect
     environment:
       - PUID=1000
-      - PGID=100
+      - PGID=1000
       - TZ=Asia/Shanghai
     volumes:
       - /Application/spotify-connect:/config
