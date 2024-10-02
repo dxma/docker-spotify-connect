@@ -24,7 +24,6 @@ RUN cd /tmp && wget https://github.com/philippe44/SpotConnect/releases/download/
     unzip SpotConnect-$VERSION.zip && cp spotupnp-linux-x86_64* /usr/bin && chmod 0755 /usr/bin/spotupnp-linux-x86_64* && \
     rm -rf /tmp/*
 
-EXPOSE ${UPNP_DISCOVERY_PORT}
 USER spotconn
 WORKDIR /config
 
