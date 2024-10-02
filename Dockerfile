@@ -3,7 +3,7 @@ FROM debian:bookworm-slim
 # Set environment variables
 ENV DEBIAN_FRONTEND noninteractive
 ENV LC_ALL="C.UTF-8" LANG="en_US.UTF-8" LANGUAGE="en_US.UTF-8"
-ENV PUID=1000 PGID=1000
+ENV PUID=1000 PGID=100
 
 ENV VERSION=0.9.2
 
@@ -16,7 +16,6 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debi
 RUN sed -i 's/mirrors.ustc.edu.cn/deb.debian.org/g' /etc/apt/sources.list.d/debian.sources
 
 # Add user
-RUN groupadd -g $PGID spotconn
 RUN useradd -u $PUID -g $PGID -G audio -d /config -m spotconn
 
 # Download binary
